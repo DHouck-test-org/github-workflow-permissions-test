@@ -21,7 +21,7 @@ jobs:
       - name: Set up project
         uses: ./.github/actions/setup
         with:
-          node-version: $
+          node-version: ${{ env.node-version }}
 
       - name: Build
         run: yarn run build
@@ -35,7 +35,7 @@ jobs:
       - name: Set up project
         uses: ./.github/actions/setup
         with:
-          node-version: $
+          node-version: ${{ env.node-version }}
 
       - name: Linting
         run: yarn run lint
@@ -53,7 +53,7 @@ jobs:
       - name: Set up project
         uses: ./.github/actions/setup
         with:
-          node-version: $
+          node-version: ${{ env.node-version }}
 
       - name: Build
         run: yarn run build
@@ -63,7 +63,7 @@ jobs:
         env:
           REPO: self
           BRANCH: release
-          FOLDER: $
-          GITHUB_TOKEN: $
+          FOLDER: ${{ env.build-path }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
           SKIP_EMPTY_COMMITS: true
