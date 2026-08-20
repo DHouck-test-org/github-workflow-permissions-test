@@ -1,6 +1,6 @@
-import { print } from "kolmafia";
+import { print, printHtml } from "kolmafia";
 
-export function main(args: string): void {
+export function main(...args: string[]): void {
 	print("You have successfully built github-workflow-permissions-test!");
-	print(`You called it with \`${args}\`.`);
+	printHtml(`You called it with <code>${args}</code>.`);
 }
